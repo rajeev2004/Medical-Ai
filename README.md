@@ -24,9 +24,8 @@ Built to demonstrate clean UI, state management, and API handling.
 npm install
 ```
 
-```bash
 Start development server:
-```
+
 
 ```bash
 npm run dev
