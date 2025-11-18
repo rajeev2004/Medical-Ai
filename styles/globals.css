@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Simple system font + background */
+:root {
+  --primary: #0b6ff0;
+  --muted: #6b7280;
+  --card-shadow: 0 6px 18px rgba(10, 10, 10, 0.06);
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  @apply bg-bg text-gray-900;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* small helpers */
+.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Chat message styles */
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* user bubble */
+.msg.user {
+  align-self: flex-end;
+  background: linear-gradient(90deg, var(--primary), #085bcc);
+  color: white;
+  border-radius: 14px 14px 6px 14px;
+  padding: 10px 14px;
+  max-width: 78%;
+  box-shadow: var(--card-shadow);
+}
+
+/* ai bubble */
+.msg.ai {
+  align-self: flex-start;
+  background: white;
+  color: #111827;
+  border-radius: 14px 14px 14px 6px;
+  padding: 10px 14px;
+  max-width: 78%;
+  border: 1px solid #e6eefc;
+  box-shadow: var(--card-shadow);
+}
+
+/* message meta */
+.msg-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* input area */
+.chat-input {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.input-field {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e6eefc;
+}
+
+/* nice animate */
+.fade-in {
+  animation: fadeIn 0.35s ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
